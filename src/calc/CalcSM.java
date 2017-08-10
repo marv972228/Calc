@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 /**
  *
- * @author marvi
+ * Calc Machine
  */
 public class CalcSM {
     
