@@ -8,8 +8,11 @@ import java.math.BigDecimal;
  * About:
  *  This class holds the values of the two operands. This class can be used
  * if more than one operand is designed into the calculator for various operations
- * Note this is called dynamically in the program.
- */
+ * Note this is called dynamically in the program. 
+ * 
+ * notes notes
+ * 
+ */ 
 public class Operand {
     // OPERAND 1
     private String negatedString;           // holds (-1), can flip
