@@ -10,8 +10,6 @@ import java.math.BigDecimal;
  * if more than one operand is designed into the calculator for various operations
  * Note this is called dynamically in the program. 
  * 
- * notes notes
- * 
  */ 
 public class Operand {
     // OPERAND 1
