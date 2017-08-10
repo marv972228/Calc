@@ -12,7 +12,7 @@ import java.math.RoundingMode;
  *
  * @author marvi
  */
-public class mathBigDecimal 
+public class MathOperationsState 
 {
     public static String calculate()
     {
@@ -95,14 +95,14 @@ public class mathBigDecimal
     {
         if (CalcSM.mathState == DIVIDE)
         {
-            CalcSM.total = new BigDecimal(mathBigDecimal.calculate());
+            CalcSM.total = new BigDecimal(MathOperationsState.calculate());
             CalcSM.total = CalcSM.total.multiply(BigDecimal.TEN);
             CalcSM.total = CalcSM.total.multiply(BigDecimal.TEN);
             CalcSM.isPercentage = true;
         }
         else if (CalcSM.mathState == MULTIPLY)
         {
-            CalcSM.total = new BigDecimal(mathBigDecimal.calculate());
+            CalcSM.total = new BigDecimal(MathOperationsState.calculate());
             CalcSM.total = CalcSM.total.divide(BigDecimal.TEN);
             CalcSM.total = CalcSM.total.divide(BigDecimal.TEN);
             CalcSM.isPercentageTop = true;

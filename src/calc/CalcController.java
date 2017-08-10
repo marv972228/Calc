@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
  *
  * @author marvi
  */
-public class FXMLCalcController implements Initializable {
+public class CalcController implements Initializable {
     
     @FXML
     private TextField operationsTextField;

@@ -10,7 +10,7 @@ import static calc.EnumOperationState.*;
  *
  * @author marvi
  */
-public class CalcSMoperandOne {
+public class OperandOneState {
     
     public static void operand1()
     {
@@ -23,7 +23,7 @@ public class CalcSMoperandOne {
                 CalcSMready.ready();
                 break;
             case "MRC":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             case "+":
             case "-":
@@ -32,7 +32,7 @@ public class CalcSMoperandOne {
             case "*":
             case "^":
                 CalcSM.currentState = OPENTERED;
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 break;
         }
         
@@ -76,12 +76,12 @@ public class CalcSMoperandOne {
             case "/":
             case "*":
                 CalcSM.currentState = OPENTERED;
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 break;
             case "MRC":
             case "M+":
             case "M-":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             default:
                 CalcSM.currentState = OPERAND1;
@@ -125,14 +125,14 @@ public class CalcSMoperandOne {
             case "/":
             case "*":
                 CalcSM.currentState = OPENTERED;
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 break;
             case "^2":
                 break;
             case "MRC":
             case "M+":
             case "M-":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             default:
                 CalcSM.currentState = OPERAND1;
@@ -172,12 +172,12 @@ public class CalcSMoperandOne {
             case "/":
             case "*":
                 CalcSM.currentState = OPENTERED;
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 break;
             case "MRC":
             case "M+":
             case "M-":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             default:
                 CalcSM.currentState = OPERAND1;

@@ -38,7 +38,7 @@ public class CalcSM {
         isPercentage = false;
         isPercentageTop = false;
         hasError = false;
-        CalcSMmemory.hasMemory = false;
+        MemoryState.hasMemory = false;
         
         mathState = NONE;
         total = new BigDecimal("0");
@@ -102,7 +102,7 @@ public class CalcSM {
                 off();
                 break;
             case MEMORY:
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             case BEGIN:
                 CalcSMready.begin();
@@ -111,31 +111,31 @@ public class CalcSM {
                 CalcSMready.result();
                 break;
             case OPERAND1:
-                CalcSMoperandOne.operand1();
+                OperandOneState.operand1();
                 break;
             case ZERO1:
-                CalcSMoperandOne.zero1();
+                OperandOneState.zero1();
                 break;
             case INT1:
-                CalcSMoperandOne.int1();
+                OperandOneState.int1();
                 break;
             case FRAC1:
-                CalcSMoperandOne.frac1();
+                OperandOneState.frac1();
                 break;
             case OPENTERED:
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 break;
             case OPERAND2:
-                CalcSMoperandTwo.operand2();
+                OperandTwoState.operand2();
                 break;
             case ZERO2:
-                CalcSMoperandTwo.zero2();
+                OperandTwoState.zero2();
                 break;
             case INT2:
-                CalcSMoperandTwo.int2();
+                OperandTwoState.int2();
                 break;
             case FRAC2:
-                CalcSMoperandTwo.frac2();
+                OperandTwoState.frac2();
                 break;
         }
         
@@ -186,16 +186,16 @@ public class CalcSM {
             case FRAC1:
                 //return OP1.getOperandString();
             case OPENTERED:
-                //return CalcSMopEntered.opEnteredStringVal();
+                //return OpEnteredState.opEnteredStringVal();
             case OPERAND2:
             case ZERO2:
             case INT2:
             case FRAC2:
                 //return OP2.getOperandString();
-                return Error(OP1.getOperandString() + " " +CalcSMopEntered.opEnteredStringVal() + " " + OP2.getOperandString());
+                return Error(OP1.getOperandString() + " " +OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
                 
             case RESULT:
-                return Error(OP1.getOperandString() + isPercentTop() + " " +CalcSMopEntered.opEnteredStringVal() + " " + OP2.getOperandString());
+                return Error(OP1.getOperandString() + isPercentTop() + " " +OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
 
             
         }
@@ -235,7 +235,7 @@ public class CalcSM {
     
     public static String hasMemory()
     {
-        if(CalcSMmemory.hasMemory)
+        if(MemoryState.hasMemory)
             return "MEMORY";
         else
             return "";

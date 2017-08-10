@@ -11,7 +11,7 @@ import static calc.EnumOperationState.*;
  *
  * @author marvi
  */
-public class CalcSMopEntered 
+public class OpEnteredState 
 {
     public static void opEntered()
     {
@@ -19,7 +19,7 @@ public class CalcSMopEntered
         switch(CalcSM.getUserInput())
         {
             case "MRC":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             case "+":
                 CalcSM.mathState = ADD;
@@ -41,7 +41,7 @@ public class CalcSMopEntered
                 break;
             case "0":
                 CalcSM.currentState = ZERO2;
-                CalcSMoperandTwo.zero2();
+                OperandTwoState.zero2();
                 break;
             case "1":
             case "2":
@@ -55,13 +55,13 @@ public class CalcSMopEntered
                 CalcSM.OP2.setZeroString(false);
                 CalcSM.OP2.setPointString(false);
                 CalcSM.currentState = INT2;
-                CalcSMoperandTwo.int2();
+                OperandTwoState.int2();
                 break;
             case ".":
                 CalcSM.OP2.setZeroString(true);
                 CalcSM.OP2.setPointString(true);
                 CalcSM.currentState = FRAC2;
-                CalcSMoperandTwo.frac2();
+                OperandTwoState.frac2();
                 break;
             default:
                 break;

@@ -11,7 +11,7 @@ import static calc.EnumOperationState.*;
  *
  * @author marvi
  */
-public class CalcSMmemory 
+public class MemoryState 
 {
     
     public static boolean hasMemory;
@@ -61,7 +61,7 @@ public class CalcSMmemory
                 CalcSM.OP1.setCalculatedString(CalcSM.memoryTotal.toPlainString());
                 CalcSM.currentState = OPERAND1;
                 CalcSM.setUserInput("");
-                CalcSMoperandOne.operand1();
+                OperandOneState.operand1();
                 break;
             case RESULT:
                 break;

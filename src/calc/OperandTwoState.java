@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  *
  * @author marvi
  */
-public class CalcSMoperandTwo 
+public class OperandTwoState 
 {
     public static void operand2()
     {
@@ -20,26 +20,26 @@ public class CalcSMoperandTwo
         switch(CalcSM.getUserInput())
         {
             case "MRC":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             case "ceInput":
                 CalcSM.OP2.clearOperand();
                 CalcSM.currentState = OPENTERED;
                 //CalcSM.mathState = NONE;
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 break;
             case "+":
             case "-":
             case "/":
             case "*":
             case "^":
-                CalcSM.total = new BigDecimal(mathBigDecimal.calculate());
+                CalcSM.total = new BigDecimal(MathOperationsState.calculate());
                 CalcSM.OP1.clearOperand();
                 CalcSM.OP2.clearOperand();
                 CalcSM.OP1.setCalculatedString(CalcSM.total.stripTrailingZeros().toPlainString());
                 CalcSM.total = new BigDecimal("0");
                 CalcSM.currentState = OPENTERED;
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 
                 break;
             case "%":
@@ -89,7 +89,7 @@ public class CalcSMoperandTwo
             case "MRC":
             case "M+":
             case "M-":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             default:
                 CalcSM.currentState = OPERAND2;
@@ -131,7 +131,7 @@ public class CalcSMoperandTwo
             case "MRC":
             case "M+":
             case "M-":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             default:
                 CalcSM.currentState = OPERAND2;
@@ -169,7 +169,7 @@ public class CalcSMoperandTwo
             case "MRC":
             case "M+":
             case "M-":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             default:
                 CalcSM.currentState = OPERAND2;

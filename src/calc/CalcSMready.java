@@ -37,7 +37,7 @@ public class CalcSMready
         switch(CalcSM.getUserInput())
         {
             case "MRC":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             case "negateInput":
                 CalcSM.debugPrint("Go to NEGATED1");
@@ -47,7 +47,7 @@ public class CalcSMready
             case "0":
                 CalcSM.debugPrint("Go to ZERO1");
                 CalcSM.currentState = ZERO1;
-                CalcSMoperandOne.zero1();
+                OperandOneState.zero1();
                 break;
                 
             case "1":
@@ -61,7 +61,7 @@ public class CalcSMready
             case "9":
                 CalcSM.debugPrint("Go to INT1");
                 CalcSM.currentState = INT1;
-                CalcSMoperandOne.int1();
+                OperandOneState.int1();
                 break;
                 
             case "decimalPointInput":
@@ -92,20 +92,20 @@ public class CalcSMready
                 CalcSM.OP1.setCalculatedString(CalcSM.total.stripTrailingZeros().toPlainString());
                 CalcSM.total = new BigDecimal("0");
                 CalcSM.currentState = OPENTERED;
-                CalcSMopEntered.opEntered();
+                OpEnteredState.opEntered();
                 break;
             case "M-":
             case "M+":
-                CalcSMmemory.memory();
+                MemoryState.memory();
                 break;
             case "(-)":
-                CalcSM.total = mathBigDecimal.negate(CalcSM.total);
+                CalcSM.total = MathOperationsState.negate(CalcSM.total);
                 break;
             case "%":
-                mathBigDecimal.percentOperation();
+                MathOperationsState.percentOperation();
                 break;
             case "=":
-                CalcSM.total = new BigDecimal(mathBigDecimal.calculate());
+                CalcSM.total = new BigDecimal(MathOperationsState.calculate());
                 break;
             default:
                 CalcSM.mathState = NONE;

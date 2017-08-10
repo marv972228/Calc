@@ -10,7 +10,7 @@ import static calc.EnumOperationState.*;
  *
  * @author marvi
  */
-public class CalcSMerror {
+public class ErrorState {
     
     public static void error()
     {
