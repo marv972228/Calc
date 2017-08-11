@@ -51,7 +51,7 @@ public class MemoryState
                 CalcSM.clear();
                 CalcSM.setUserInput("");
                 CalcSM.currentState = BEGIN;
-                CalcSMready.begin();
+                ReadyState.begin();
                 break;
             case BEGIN: 
             case ZERO1:
@@ -72,7 +72,7 @@ public class MemoryState
                     CalcSM.OP2.setCalculatedString(CalcSM.memoryTotal.toPlainString());
                     CalcSM.currentState = RESULT;
                     CalcSM.setUserInput("=");
-                    CalcSMready.result();
+                    ReadyState.result();
                 }
                 break;            
             case OPERAND2:
@@ -83,7 +83,7 @@ public class MemoryState
                 CalcSM.OP2.setCalculatedString(CalcSM.memoryTotal.toPlainString());
                 CalcSM.currentState = RESULT;
                 CalcSM.setUserInput("=");
-                CalcSMready.result();
+                ReadyState.result();
                 break;
         }
         // if in opEntered, replace Operand2 with memory recall and go to result

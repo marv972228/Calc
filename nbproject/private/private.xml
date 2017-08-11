@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Examples">
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcSMoperandOne.java</file>
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcSMmemory.java</file>
             <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcSMready.java</file>
             <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/EnumMathState.java</file>
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/mathBigDecimal.java</file>
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcSM.java</file>
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcSMerror.java</file>
             <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/EnumOperationState.java</file>
             <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/Calc.java</file>
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcSMopEntered.java</file>
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/FXMLCalcController.java</file>
-            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcSMoperandTwo.java</file>
         </group>
     </open-files>
 </project-private>

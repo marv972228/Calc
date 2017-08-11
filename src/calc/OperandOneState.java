@@ -20,7 +20,7 @@ public class OperandOneState {
             case "ceInput":
                 CalcSM.clear();
                 CalcSM.currentState = BEGIN;
-                CalcSMready.ready();
+                ReadyState.ready();
                 break;
             case "MRC":
                 MemoryState.memory();

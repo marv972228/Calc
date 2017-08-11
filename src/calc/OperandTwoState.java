@@ -46,7 +46,7 @@ public class OperandTwoState
             case "=":
                 CalcSM.debugPrint("RESULT = ..");
                 CalcSM.currentState = RESULT;
-                CalcSMready.result();
+                ReadyState.result();
 
                 break;
         }

@@ -30,7 +30,7 @@ public class MathOperationsState
                 total = multiply(CalcSM.OP1.getBigDecimal(), CalcSM.OP2.getBigDecimal());
                 break;
             case DIVIDE:
-                if (CalcSM.OP2.getBigDecimal().intValue() == 0)
+                if (CalcSM.OP2.getBigDecimal().floatValue() == 0)
                 {
                     CalcSM.hasError = true;
                     break;

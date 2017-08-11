@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="427.0" styleClass="main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.FXMLCalcController">
+<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="427.0" styleClass="main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.CalcController">
    <children>
       <TextField fx:id="operationsTextField" alignment="CENTER_RIGHT" editable="false" layoutX="14.0" layoutY="47.0" prefHeight="50.0" prefWidth="400.0" styleClass="outputText" stylesheets="@style.css">
          <font>

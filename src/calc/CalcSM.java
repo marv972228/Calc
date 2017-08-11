@@ -105,10 +105,10 @@ public class CalcSM {
                 MemoryState.memory();
                 break;
             case BEGIN:
-                CalcSMready.begin();
+                ReadyState.begin();
                 break;
             case RESULT:
-                CalcSMready.result();
+                ReadyState.result();
                 break;
             case OPERAND1:
                 OperandOneState.operand1();
@@ -149,7 +149,7 @@ public class CalcSM {
         
         clear();
         currentState = BEGIN;
-        CalcSMready.ready();
+        ReadyState.ready();
         
         
         
