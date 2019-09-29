@@ -4,7 +4,7 @@
  */
 package calc;
 
-import java.awt.event.KeyEvent;
+import statemachine.CalcSM;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -224,7 +224,7 @@ public class CalcController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
         CalcSM.initialize();
         
         setTextFields();
