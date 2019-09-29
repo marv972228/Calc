@@ -49,7 +49,6 @@ public class ReadyState
                 CalcSM.setCurrentState(ZERO1);
                 OperandOneState.zero1();
                 break;
-                
             case "1":
             case "2":
             case "3":
@@ -108,7 +107,7 @@ public class ReadyState
                 CalcSM.setTotal(new BigDecimal(MathOperationsState.calculate()));
                 break;
             default:
-                CalcSM.mathState = NONE;
+                CalcSM.setMathState(NONE);
                 CalcSM.clear();
                 CalcSM.setCurrentState(BEGIN);
                 ready();
