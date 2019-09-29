@@ -23,7 +23,7 @@ public class ErrorState {
                 break;
             default:
                 CalcSM.clear();
-                CalcSM.currentState = BEGIN;
+                CalcSM.setCurrentState(BEGIN);
                 ReadyState.begin();
                 break;
         }

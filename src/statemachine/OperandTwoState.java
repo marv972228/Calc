@@ -23,7 +23,7 @@ public class OperandTwoState
                 break;
             case "ceInput":
                 CalcSM.OP2.clearOperand();
-                CalcSM.currentState = OPENTERED;
+                CalcSM.setCurrentState(OPENTERED);
                 //CalcSM.mathState = NONE;
                 OpEnteredState.opEntered();
                 break;
@@ -37,14 +37,14 @@ public class OperandTwoState
                 CalcSM.OP2.clearOperand();
                 CalcSM.OP1.setCalculatedString(CalcSM.getTotal().stripTrailingZeros().toPlainString());
                 CalcSM.setTotal(new BigDecimal("0"));
-                CalcSM.currentState = OPENTERED;
+                CalcSM.setCurrentState(OPENTERED);
                 OpEnteredState.opEntered();
                 
                 break;
             case "%":
             case "=":
                 CalcSM.debugPrint("RESULT = ..");
-                CalcSM.currentState = RESULT;
+                CalcSM.setCurrentState(RESULT);
                 ReadyState.result();
 
                 break;
@@ -76,13 +76,13 @@ public class OperandTwoState
             case "8":
             case "9":
                 CalcSM.OP2.setZeroString(false); // 0 front not needed in this case
-                CalcSM.currentState = INT2;
+                CalcSM.setCurrentState(INT2);
                 int2();
                 break;
             case ".":
                 CalcSM.OP2.setZeroString(true);
                 CalcSM.OP2.setPointString(true);
-                CalcSM.currentState = FRAC2;
+                CalcSM.setCurrentState(FRAC2);
                 frac2();
                 break;
             case "MRC":
@@ -91,7 +91,7 @@ public class OperandTwoState
                 MemoryState.memory();
                 break;
             default:
-                CalcSM.currentState = OPERAND2;
+                CalcSM.setCurrentState(OPERAND2);
                 operand2();
                 break;
         }
@@ -124,7 +124,7 @@ public class OperandTwoState
             case ".":
                 CalcSM.OP2.setZeroString(false);
                 CalcSM.OP2.setPointString(true);
-                CalcSM.currentState = FRAC2;
+                CalcSM.setCurrentState(FRAC2);
                 frac2();
                 break;
             case "MRC":
@@ -133,7 +133,7 @@ public class OperandTwoState
                 MemoryState.memory();
                 break;
             default:
-                CalcSM.currentState = OPERAND2;
+                CalcSM.setCurrentState(OPERAND2);
                 operand2();
                 break;
         }        
@@ -171,7 +171,7 @@ public class OperandTwoState
                 MemoryState.memory();
                 break;
             default:
-                CalcSM.currentState = OPERAND2;
+                CalcSM.setCurrentState(OPERAND2);
                 operand2();
                 break;
         }              

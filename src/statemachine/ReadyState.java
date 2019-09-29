@@ -18,7 +18,7 @@ public class ReadyState
     {
         CalcSM.debugPrint("Enter - READY STATE");
         
-        switch(CalcSM.currentState)
+        switch(CalcSM.getCurrentState())
         {
             case BEGIN:
                 begin();
@@ -41,12 +41,12 @@ public class ReadyState
                 break;
             case "negateInput":
                 CalcSM.debugPrint("Go to NEGATED1");
-                CalcSM.currentState = NEGATED1;
+                CalcSM.setCurrentState(NEGATED1);
                
                 break;
             case "0":
                 CalcSM.debugPrint("Go to ZERO1");
-                CalcSM.currentState = ZERO1;
+                CalcSM.setCurrentState(ZERO1);
                 OperandOneState.zero1();
                 break;
                 
@@ -60,7 +60,7 @@ public class ReadyState
             case "8":
             case "9":
                 CalcSM.debugPrint("Go to INT1");
-                CalcSM.currentState = INT1;
+                CalcSM.setCurrentState(INT1);
                 OperandOneState.int1();
                 break;
                 
@@ -91,7 +91,7 @@ public class ReadyState
                 CalcSM.OP2.clearOperand();
                 CalcSM.OP1.setCalculatedString(CalcSM.getTotal().stripTrailingZeros().toPlainString());
                 CalcSM.setTotal(new BigDecimal("0"));
-                CalcSM.currentState = OPENTERED;
+                CalcSM.setCurrentState(OPENTERED);
                 OpEnteredState.opEntered();
                 break;
             case "M-":
@@ -110,7 +110,7 @@ public class ReadyState
             default:
                 CalcSM.mathState = NONE;
                 CalcSM.clear();
-                CalcSM.currentState = BEGIN;
+                CalcSM.setCurrentState(BEGIN);
                 ready();
                 
         }

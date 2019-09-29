@@ -18,7 +18,7 @@ public class MathOperationsState
     {
         BigDecimal total = new BigDecimal("0");
         
-        switch (CalcSM.mathState) 
+        switch (CalcSM.getMathState()) 
         {
             case ADD:
                 total = add(CalcSM.OP1.getBigDecimal(), CalcSM.OP2.getBigDecimal());
@@ -93,14 +93,14 @@ public class MathOperationsState
     
     public static void percentOperation()
     {
-        if (CalcSM.mathState == DIVIDE)
+        if (CalcSM.getMathState() == DIVIDE)
         {
             CalcSM.setTotal(new BigDecimal(MathOperationsState.calculate()));
             CalcSM.setTotal(CalcSM.getTotal().multiply(BigDecimal.TEN));
             CalcSM.setTotal(CalcSM.getTotal().multiply(BigDecimal.TEN));
             CalcSM.isPercentage = true;
         }
-        else if (CalcSM.mathState == MULTIPLY)
+        else if (CalcSM.getMathState() == MULTIPLY)
         {
             CalcSM.setTotal(new BigDecimal(MathOperationsState.calculate()));
             CalcSM.setTotal(CalcSM.getTotal().divide(BigDecimal.TEN));

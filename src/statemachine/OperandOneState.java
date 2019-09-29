@@ -19,7 +19,7 @@ public class OperandOneState {
         {
             case "ceInput":
                 CalcSM.clear();
-                CalcSM.currentState = BEGIN;
+                CalcSM.setCurrentState(BEGIN);
                 ReadyState.ready();
                 break;
             case "MRC":
@@ -31,7 +31,7 @@ public class OperandOneState {
             case "%":
             case "*":
             case "^":
-                CalcSM.currentState = OPENTERED;
+                CalcSM.setCurrentState(OPENTERED);
                 OpEnteredState.opEntered();
                 break;
         }
@@ -62,20 +62,20 @@ public class OperandOneState {
             case "8":
             case "9":
                 CalcSM.OP1.setZeroString(false); // 0 front not needed in this case
-                CalcSM.currentState = INT1;
+                CalcSM.setCurrentState(INT1);
                 int1();
                 break;
             case ".":
                 CalcSM.OP1.setZeroString(true);
                 CalcSM.OP1.setPointString(true);
-                CalcSM.currentState = FRAC1;
+                CalcSM.setCurrentState(FRAC1);
                 frac1();
                 break;
             case "+":
             case "-":
             case "/":
             case "*":
-                CalcSM.currentState = OPENTERED;
+                CalcSM.setCurrentState(OPENTERED);
                 OpEnteredState.opEntered();
                 break;
             case "MRC":
@@ -84,7 +84,7 @@ public class OperandOneState {
                 MemoryState.memory();
                 break;
             default:
-                CalcSM.currentState = OPERAND1;
+                CalcSM.setCurrentState(OPERAND1);
                 operand1();
                 break;
         }
@@ -117,14 +117,14 @@ public class OperandOneState {
             case ".":
                 CalcSM.OP1.setZeroString(false);
                 CalcSM.OP1.setPointString(true);
-                CalcSM.currentState = FRAC1;
+                CalcSM.setCurrentState(FRAC1);
                 frac1();
                 break;
             case "+":
             case "-":
             case "/":
             case "*":
-                CalcSM.currentState = OPENTERED;
+                CalcSM.setCurrentState(OPENTERED);
                 OpEnteredState.opEntered();
                 break;
             case "^2":
@@ -135,7 +135,7 @@ public class OperandOneState {
                 MemoryState.memory();
                 break;
             default:
-                CalcSM.currentState = OPERAND1;
+                CalcSM.setCurrentState(OPERAND1);
                 operand1();
                 break;
         }        
@@ -171,7 +171,7 @@ public class OperandOneState {
             case "-":
             case "/":
             case "*":
-                CalcSM.currentState = OPENTERED;
+                CalcSM.setCurrentState(OPENTERED);
                 OpEnteredState.opEntered();
                 break;
             case "MRC":
@@ -180,7 +180,7 @@ public class OperandOneState {
                 MemoryState.memory();
                 break;
             default:
-                CalcSM.currentState = OPERAND1;
+                CalcSM.setCurrentState(OPERAND1);
                 operand1();
                 break;
         }              
