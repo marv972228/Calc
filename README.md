@@ -6,12 +6,14 @@ The inspiration for the Java Calc program is from: figure 2.18 "The final calcul
 The main goal of this project was to gain experience with state machine patterns as well as implement a physical calculator available at any store.
 
 ## Features
-
-- Uses BigDecimal to handle any size calculation
-- The calculator functions
--- Add
--- Subtract
--- Multiply
--- Divide
--- Exponent
--- Memory
+Uses BigDecimal to handle any size calculation
+The calculator functions
+- Add
+- Subtract
+- Multiply
+- Divide
+- Exponent
+- Memory
+- Simulate ON/OFF
+- C button
+- CE button
