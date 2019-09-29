@@ -31,11 +31,14 @@ public class CalcSM {
     private static boolean printOutBool;
    
     
+    /**
+     * This method sets the default states
+     */
     public static void initialize()
     {
         debugPrint("INITIALIZE");
         setUserInput("...");
-        printOutBool = true;                // set to true for console prinouts 
+        printOutBool = false;                // set to true for console prinouts 
         currentState = ON;
         isPercentage = false;
         isPercentageTop = false;
@@ -49,6 +52,9 @@ public class CalcSM {
         
     }
     
+    /**
+     * This method resets the calculator states
+     */
     public static void clear()
     {
         OP1.clearOperand();
@@ -62,16 +68,30 @@ public class CalcSM {
         //memoryTotal = new BigDecimal("0");
     }
     
+    /**
+     * This method gets the userInput value
+     * 
+     * @return 
+     */
     public static String getUserInput()
     {
         return userInput;
     }
     
+    /**
+     * This method sets the user Input value
+     * @param str 
+     */
     public static void setUserInput(String str)
     {
         CalcSM.userInput = str;
     }
     
+    /**
+     * This is the method used via the CalcController to set the value
+     * of the last user action on the calculator
+     * @param str 
+     */
     public static void input(String str)
     {
         setUserInput(str);
@@ -90,7 +110,12 @@ public class CalcSM {
         determineState();
     }
     
-    
+    /**
+     * This method determines one state the calculator is in. Depending on the user actions, 
+     * operand1 value and operand 2 value, and other state, state is continually updated. Through the state 
+     * machine process. This method is used after each input to determine what the next set
+     * of operations should be...
+     */
     public static void determineState()
     {
         debugPrint("#### Enter - DETERMINE STATE = " + currentState.toString() + " #############");
