@@ -34,7 +34,7 @@ public class OpEnteredState
                 CalcSM.setMathState(MULTIPLY);
                 break;
             case "^":
-                CalcSM.mathState = EXPONENT;
+                CalcSM.setMathState(EXPONENT);
                 break;
             case "(-)":
                 CalcSM.OP2.setNegation();
@@ -69,12 +69,12 @@ public class OpEnteredState
                     
         }
         
-        CalcSM.debugPrint("Exit OP ENTERED STATE - mathstate = " + CalcSM.mathState.toString());
+        CalcSM.debugPrint("Exit OP ENTERED STATE - mathstate = " + CalcSM.getMathState().toString());
     }
     
     public static String opEnteredStringVal() 
     {
-        switch (CalcSM.mathState)
+        switch (CalcSM.getMathState())
         {
             case ADD:
                 return "+";

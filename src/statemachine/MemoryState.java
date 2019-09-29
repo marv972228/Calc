@@ -8,7 +8,9 @@ import static enums.EnumMathState.NONE;
 import static enums.EnumOperationState.*;
 
 /**
- *
+ * This class adds the ability for the calculator to implement the memory feature
+ * which exists on many standard calculators. 
+ * 
  * @author marvi
  */
 public class MemoryState 
