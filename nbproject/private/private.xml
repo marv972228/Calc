@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="Examples">
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/Operand.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/MemoryState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/test/AddTestFunctionality/AddTest.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/CalcController.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/Calc.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/OperandTwoState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/OperandOneState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/CalcSM.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/enums/EnumMathState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/enums/EnumOperationState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/ErrorState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/ReadyState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/OpEnteredState.java</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/calc/style.css</file>
+            <file>file:/C:/Users/marvi/Documents/NetBeansProjects/Calc/src/statemachine/MathOperationsState.java</file>
+        </group>
+    </open-files>
+</project-private>

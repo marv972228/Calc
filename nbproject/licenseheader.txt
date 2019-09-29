@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Author: Marvin Mallari
+${licensePrefix}Email: marvinmallari@gmail.com
+<#if licenseLast??>
+${licenseLast}
+</#if>
