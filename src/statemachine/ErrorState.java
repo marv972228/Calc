@@ -12,6 +12,10 @@ import static enums.EnumOperationState.*;
  */
 public class ErrorState {
     
+    /**
+     * This method enters the error state, not much happens here but is handled
+     * outside this state
+     */
     public static void error()
     {
         CalcSM.debugPrint("Enter ERROR state");
