@@ -16,8 +16,6 @@ import javafx.stage.StageStyle;
  * @author marvi
  */
 public class Calc extends Application {
- 
-  
 
     @Override
     public void start(Stage stage) throws Exception {

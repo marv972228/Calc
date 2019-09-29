@@ -19,8 +19,8 @@ public class CalcSM {
     public static final Operand OP1 = new Operand();
     public static final Operand OP2 = new Operand();
     
-    public static EnumOperationState currentState;
-    public static EnumMathState mathState;
+    private static EnumOperationState currentState;
+    private static EnumMathState mathState;
     
     private static BigDecimal total;
     private static BigDecimal memoryTotal;
@@ -362,6 +362,22 @@ public class CalcSM {
 
     public static void setMemoryTotal(BigDecimal memoryTotal) {
         CalcSM.memoryTotal = memoryTotal;
+    }
+
+    public static EnumOperationState getCurrentState() {
+        return currentState;
+    }
+
+    public static void setCurrentState(EnumOperationState currentState) {
+        CalcSM.currentState = currentState;
+    }
+
+    public static EnumMathState getMathState() {
+        return mathState;
+    }
+
+    public static void setMathState(EnumMathState mathState) {
+        CalcSM.mathState = mathState;
     }
     
     

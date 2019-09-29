@@ -43,14 +43,14 @@ public class MemoryState
     public static void MemoryRecall()
     {
         // if in begin state, replace operand1 with memory recall go to opEntered
-        switch (CalcSM.currentState)
+        switch (CalcSM.getCurrentState())
         {
             case OPERAND1:
                 CalcSM.setMemoryTotal(CalcSM.getMemoryTotal().ZERO);
                 hasMemory = false;
                 CalcSM.clear();
                 CalcSM.setUserInput("");
-                CalcSM.currentState = BEGIN;
+                CalcSM.setCurrentState(BEGIN);
                 ReadyState.begin();
                 break;
             case BEGIN: 
@@ -59,18 +59,18 @@ public class MemoryState
             case FRAC1:
                 CalcSM.OP1.clearOperand();
                 CalcSM.OP1.setCalculatedString(CalcSM.getMemoryTotal().toPlainString());
-                CalcSM.currentState = OPERAND1;
+                CalcSM.setCurrentState(OPERAND1);
                 CalcSM.setUserInput("");
                 OperandOneState.operand1();
                 break;
             case RESULT:
                 break;
             case OPENTERED:
-                if (CalcSM.mathState != NONE)
+                if (CalcSM.getMathState() != NONE)
                 {
                     CalcSM.OP2.clearOperand();
                     CalcSM.OP2.setCalculatedString(CalcSM.getMemoryTotal().toPlainString());
-                    CalcSM.currentState = RESULT;
+                    CalcSM.setCurrentState(RESULT);
                     CalcSM.setUserInput("=");
                     ReadyState.result();
                 }
@@ -81,7 +81,7 @@ public class MemoryState
             case FRAC2:
                 CalcSM.OP2.clearOperand();
                 CalcSM.OP2.setCalculatedString(CalcSM.getMemoryTotal().toPlainString());
-                CalcSM.currentState = RESULT;
+                CalcSM.setCurrentState(RESULT);
                 CalcSM.setUserInput("=");
                 ReadyState.result();
                 break;
@@ -93,7 +93,7 @@ public class MemoryState
     {
         CalcSM.debugPrint("Enter MEMORY ADD STATE");
         
-        switch (CalcSM.currentState)
+        switch (CalcSM.getCurrentState())
         {
 
             case INT1:
@@ -122,7 +122,7 @@ public class MemoryState
     public static void MemorySubtract()
     {
         CalcSM.debugPrint("Enter MEMORY SUBTRACT STATE");
-        switch (CalcSM.currentState)
+        switch (CalcSM.getCurrentState())
         {
             case INT1:
             case ZERO1:

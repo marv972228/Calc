@@ -22,16 +22,16 @@ public class OpEnteredState
                 MemoryState.memory();
                 break;
             case "+":
-                CalcSM.mathState = ADD;
+                CalcSM.setMathState(ADD);
                 break;
             case "-":
-                CalcSM.mathState = SUBTRACT;
+                CalcSM.setMathState(SUBTRACT);
                 break;
             case "/":
-                CalcSM.mathState = DIVIDE;
+                CalcSM.setMathState(DIVIDE);
                 break;
             case "*":
-                CalcSM.mathState = MULTIPLY;
+                CalcSM.setMathState(MULTIPLY);
                 break;
             case "^":
                 CalcSM.mathState = EXPONENT;
@@ -40,7 +40,7 @@ public class OpEnteredState
                 CalcSM.OP2.setNegation();
                 break;
             case "0":
-                CalcSM.currentState = ZERO2;
+                CalcSM.setCurrentState(ZERO2);
                 OperandTwoState.zero2();
                 break;
             case "1":
@@ -54,13 +54,13 @@ public class OpEnteredState
             case "9":
                 CalcSM.OP2.setZeroString(false);
                 CalcSM.OP2.setPointString(false);
-                CalcSM.currentState = INT2;
+                CalcSM.setCurrentState(INT2);
                 OperandTwoState.int2();
                 break;
             case ".":
                 CalcSM.OP2.setZeroString(true);
                 CalcSM.OP2.setPointString(true);
-                CalcSM.currentState = FRAC2;
+                CalcSM.setCurrentState(FRAC2);
                 OperandTwoState.frac2();
                 break;
             default:
