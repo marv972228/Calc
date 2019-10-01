@@ -40,6 +40,11 @@ public class MathOperationsState
             case EXPONENT:
                 total = exponent(CalcSM.OP1.getBigDecimal(), CalcSM.OP2.getBigDecimal());
                 break;
+            case PERCENT:
+                
+                total = divide(CalcSM.OP1.getBigDecimal(), new BigDecimal(100));
+                total = multiply(total, CalcSM.OP2.getBigDecimal());
+                break;
 
         }
         

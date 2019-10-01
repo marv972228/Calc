@@ -36,6 +36,9 @@ public class OpEnteredState
             case "^":
                 CalcSM.setMathState(EXPONENT);
                 break;
+            case "%":
+                CalcSM.setMathState(PERCENT);
+                break;
             case "(-)":
                 CalcSM.OP2.setNegation();
                 break;
@@ -89,6 +92,8 @@ public class OpEnteredState
                 return "/";
             case EXPONENT:
                 return "^";
+            case PERCENT:
+                return "%";
             default:
                 return "";
         }
