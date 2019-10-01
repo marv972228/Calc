@@ -56,6 +56,9 @@ public class AddTest {
         BigDecimal val = CalcSM.getTotal();
         BigDecimal expected = new BigDecimal("110");
         assertEquals(expected.intValue(), val.intValue());
+        System.out.println("55 + 55 = " + CalcSM.getTotal());
+        
+        // reset machine
         CalcSM.clear();
     }
     
