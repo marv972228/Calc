@@ -21,10 +21,10 @@ public class MultiplyTest {
     @Test 
     public void multiplySimple() {
         CalcSM.initialize();
-        CalcSM.input("5");
-        CalcSM.input("*");
-        CalcSM.input("5");
-        CalcSM.input("=");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("*");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("=");
         BigDecimal val = CalcSM.getTotal();
         BigDecimal expected = new BigDecimal("25");
         assertEquals(expected.intValue(), val.intValue());

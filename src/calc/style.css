@@ -44,13 +44,13 @@ and open the template in the editor.
     -fx-text-fill: #ffffff;
     -fx-background-radius: 16px;
     -fx-font-size: 20px;
-    
+
 }
 
 .darkbutton:hover {
     -fx-background-color: #cccccc;
     -fx-text-fill: #000000;
-    
+
 }
 
 

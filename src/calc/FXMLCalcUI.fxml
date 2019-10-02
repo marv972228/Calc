@@ -6,140 +6,142 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="427.0" styleClass="main" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calc.CalcController">
-   <children>
-      <TextField fx:id="operationsTextField" alignment="CENTER_RIGHT" editable="false" layoutX="14.0" layoutY="47.0" prefHeight="50.0" prefWidth="400.0" styleClass="outputText" stylesheets="@style.css">
-         <font>
-            <Font size="20.0" />
-         </font></TextField>
-      <TextField fx:id="resultTextField" alignment="CENTER_RIGHT" editable="false" layoutX="14.0" layoutY="115.0" prefHeight="50.0" prefWidth="400.0" styleClass="outputText" stylesheets="@style.css">
-         <font>
-            <Font size="20.0" />
-         </font></TextField>
-      <Button fx:id="mrcBtn" layoutX="334.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="MRC">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="mSubtractBtn" layoutX="334.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="M-">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="mAddBtn" layoutX="334.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="M+">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="negateBtn" layoutX="334.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="(-)">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="percentBtn" layoutX="334.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="\%">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="sevenBtn" layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="7">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="eightBtn" layoutX="94.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="8">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="nineBtn" layoutX="174.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="9">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="divideBtn" layoutX="254.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="/">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="exponentBtn" layoutX="254.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="x^n">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="fourBtn" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="4">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="fiveBtn" layoutX="94.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="5">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="sixBtn" layoutX="174.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="6">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="multiplyBtn" layoutX="254.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="X">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="offBtn" layoutX="94.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" text="OFF">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="oneBtn" layoutX="14.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="1">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="twoBtn" layoutX="94.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="2">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="threeBtn" layoutX="174.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="3">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="subtractBtn" layoutX="254.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="-">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="onBtn" layoutX="14.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" text="ON/C">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="zeroBtn" layoutX="14.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="0">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="fracBtn" layoutX="94.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text=".">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="equalBtn" layoutX="174.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="=">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="addBtn" layoutX="254.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="+">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="ceBtn" layoutX="174.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" text="CE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <TextField fx:id="memoryTextField" layoutX="260.0" layoutY="14.0" styleClass="memoryField" />
-   </children>
+    <children>
+        <TextField fx:id="operationsTextField" alignment="CENTER_RIGHT" editable="false" layoutX="14.0" layoutY="47.0" prefHeight="50.0" prefWidth="400.0" styleClass="outputText" stylesheets="@style.css">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="resultTextField" alignment="CENTER_RIGHT" editable="false" layoutX="14.0" layoutY="115.0" prefHeight="50.0" prefWidth="400.0" styleClass="outputText" stylesheets="@style.css">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </TextField>
+        <Button fx:id="mrcBtn" layoutX="334.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="MRC">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="mSubtractBtn" layoutX="334.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="M-">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="mAddBtn" layoutX="334.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="M+">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="negateBtn" layoutX="334.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="(-)">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="percentBtn" layoutX="334.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="\%">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="sevenBtn" layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="7">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="eightBtn" layoutX="94.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="8">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="nineBtn" layoutX="174.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="9">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="divideBtn" layoutX="254.0" layoutY="260.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="/">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="exponentBtn" layoutX="254.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" text="x^n">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="fourBtn" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="4">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="fiveBtn" layoutX="94.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="5">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="sixBtn" layoutX="174.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="6">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="multiplyBtn" layoutX="254.0" layoutY="340.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="X">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="offBtn" layoutX="94.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" text="OFF">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="oneBtn" layoutX="14.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="1">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="twoBtn" layoutX="94.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="2">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="threeBtn" layoutX="174.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="3">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="subtractBtn" layoutX="254.0" layoutY="420.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="-">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="onBtn" layoutX="14.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" text="ON/C">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="zeroBtn" layoutX="14.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text="0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="fracBtn" layoutX="94.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="numberbutton" stylesheets="@style.css" text=".">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="equalBtn" layoutX="174.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="=">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="addBtn" layoutX="254.0" layoutY="500.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" styleClass="darkbutton" stylesheets="@style.css" text="+">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="ceBtn" layoutX="174.0" layoutY="180.0" mnemonicParsing="false" onAction="#calcButtonAction" prefHeight="80.0" prefWidth="80.0" text="CE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <TextField fx:id="memoryTextField" layoutX="260.0" layoutY="14.0" styleClass="memoryField" />
+    </children>
 </AnchorPane>

@@ -21,12 +21,12 @@ public class PercentTest {
     @Test
     public void simplePercentTest() {
         CalcSM.initialize();
-        CalcSM.input("2");
-        CalcSM.input("5");
-        CalcSM.input("%");
-        CalcSM.input("1");
-        CalcSM.input("0");
-        CalcSM.input("=");
+        CalcSM.buttonAction("2");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("%");
+        CalcSM.buttonAction("1");
+        CalcSM.buttonAction("0");
+        CalcSM.buttonAction("=");
         BigDecimal val = CalcSM.getTotal();
         BigDecimal expected = new BigDecimal("2.5");
         assertEquals(expected.intValue(), val.intValue());

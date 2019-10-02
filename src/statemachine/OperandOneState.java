@@ -11,12 +11,10 @@ import static enums.EnumOperationState.*;
  * @author marvi
  */
 public class OperandOneState {
-    
-    public static void operand1()
-    {
+
+    public static void operand1() {
         CalcSM.debugPrint("Enter - OPERAND1 STATE");
-        switch(CalcSM.getUserInput())
-        {
+        switch (CalcSM.getButtonActionValue()) {
             case "ceInput":
                 CalcSM.clear();
                 CalcSM.setCurrentState(BEGIN);
@@ -35,16 +33,14 @@ public class OperandOneState {
                 OpEnteredState.opEntered();
                 break;
         }
-        
-        CalcSM.debugPrint("Exit - OPERAND1 STATE");   
+
+        CalcSM.debugPrint("Exit - OPERAND1 STATE");
     }
-    
-    public static void zero1()
-    {
+
+    public static void zero1() {
         CalcSM.debugPrint("Enter - ZERO1 STATE");
-        
-        switch(CalcSM.getUserInput())
-        {
+
+        switch (CalcSM.getButtonActionValue()) {
             case "(-)":
                 CalcSM.OP1.setNegation();
                 break;
@@ -88,16 +84,13 @@ public class OperandOneState {
                 operand1();
                 break;
         }
-        
-        
-        CalcSM.debugPrint("Exit - ZERO1 STATE");         
+
+        CalcSM.debugPrint("Exit - ZERO1 STATE");
     }
-    
-    public static void int1()
-    {
+
+    public static void int1() {
         CalcSM.debugPrint("Enter - INT1 STATE");
-        switch(CalcSM.getUserInput())
-        {
+        switch (CalcSM.getButtonActionValue()) {
             case "(-)":
                 CalcSM.OP1.setNegation();
                 break;
@@ -112,7 +105,7 @@ public class OperandOneState {
             case "8":
             case "9":
                 CalcSM.debugPrint("+++ Append INTEGER1 +++");
-                CalcSM.OP1.appendIntString(CalcSM.getUserInput());
+                CalcSM.OP1.appendIntString(CalcSM.getButtonActionValue());
                 break;
             case ".":
                 CalcSM.OP1.setZeroString(false);
@@ -138,17 +131,15 @@ public class OperandOneState {
                 CalcSM.setCurrentState(OPERAND1);
                 operand1();
                 break;
-        }        
-        
+        }
+
         CalcSM.debugPrint("OPERAND1 value string = " + CalcSM.OP1.getOperandString());
-        CalcSM.debugPrint("Exit - INT1 STATE");         
+        CalcSM.debugPrint("Exit - INT1 STATE");
     }
-    
-    public static void frac1()
-    {
+
+    public static void frac1() {
         CalcSM.debugPrint("Enter - FRAC1 STATE");
-        switch(CalcSM.getUserInput())
-        {
+        switch (CalcSM.getButtonActionValue()) {
             case "(-)":
                 CalcSM.OP1.setNegation();
                 break;
@@ -163,7 +154,7 @@ public class OperandOneState {
             case "8":
             case "9":
                 CalcSM.debugPrint("+++ Append FRAC1 +++");
-                CalcSM.OP1.appendFracString(CalcSM.getUserInput());
+                CalcSM.OP1.appendFracString(CalcSM.getButtonActionValue());
                 break;
             case ".":
                 break;
@@ -183,8 +174,8 @@ public class OperandOneState {
                 CalcSM.setCurrentState(OPERAND1);
                 operand1();
                 break;
-        }              
-        CalcSM.debugPrint("OPERAND1 value string = " + CalcSM.OP1.getOperandString());       
-        CalcSM.debugPrint("Exit - FRAC1 STATE");         
+        }
+        CalcSM.debugPrint("OPERAND1 value string = " + CalcSM.OP1.getOperandString());
+        CalcSM.debugPrint("Exit - FRAC1 STATE");
     }
 }

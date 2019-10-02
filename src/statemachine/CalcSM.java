@@ -15,48 +15,52 @@ import java.math.BigDecimal;
  * Calc Machine
  */
 public class CalcSM {
-    
+
     public static final Operand OP1 = new Operand();
     public static final Operand OP2 = new Operand();
-    
+
     private static EnumOperationState currentState;
     private static EnumMathState mathState;
-    
+
     private static BigDecimal total;
     private static BigDecimal memoryTotal;
-    private static String userInput;
+    private static String buttonActionValue;
     public static boolean isPercentage;
     public static boolean isPercentageTop;
     private static boolean error;
     private static boolean printOutBool;
-   
-    
+
     /**
      * This method sets the default states
      */
-    public static void initialize()
-    {
+    public static void initialize() {
         debugPrint("INITIALIZE");
-        setUserInput("...");
-        printOutBool = false;                // set to true for console prinouts 
+
+        // set the default calculator value
+        setButtonActionValue("...");
+
+        // set to true for console printouts
+        printOutBool = false;
+
+        // set the initial state to ON
         currentState = ON;
+
         isPercentage = false;
         isPercentageTop = false;
         error = false;
+
         MemoryState.hasMemory = false;
-        
         mathState = NONE;
         total = new BigDecimal("0");
         memoryTotal = new BigDecimal("0");
         clear();
-        
+
     }
-    
+
     /**
      * This method resets the calculator states
      */
-    public static void clear()
-    {
+    public static void clear() {
         OP1.clearOperand();
         OP2.clearOperand();
         isPercentage = false;
@@ -67,38 +71,38 @@ public class CalcSM {
         total = new BigDecimal("0");
         //memoryTotal = new BigDecimal("0");
     }
-    
+
     /**
-     * This method gets the userInput value
-     * 
-     * @return 
+     * This method gets the buttonActionValue value
+     *
+     * @return
      */
-    public static String getUserInput()
-    {
-        return userInput;
+    public static String getButtonActionValue() {
+        return buttonActionValue;
     }
-    
+
     /**
-     * This method sets the user Input value
-     * @param str 
+     * This method sets the buttonActionValue. Usually is only one character,
+     * but maybe a predefined string value for some determined state to be acted
+     * upon
+     *
+     * @param str
      */
-    public static void setUserInput(String str)
-    {
-        CalcSM.userInput = str;
+    public static void setButtonActionValue(String str) {
+        CalcSM.buttonActionValue = str;
     }
-    
+
     /**
-     * This is the method used via the CalcController to set the value
-     * of the last user action on the calculator
-     * @param str 
+     * This is the method used via the CalcController to set the value of the
+     * last user action on the calculator
+     *
+     * @param str
      */
-    public static void input(String str)
-    {
-        setUserInput(str);
-        debugPrint("UserInput = " + getUserInput());
-        
-        switch(getUserInput())
-        {
+    public static void buttonAction(String str) {
+        setButtonActionValue(str);
+        debugPrint("UserInput = " + getButtonActionValue());
+
+        switch (getButtonActionValue()) {
             case "onInput":
                 currentState = ON;
                 break;
@@ -106,22 +110,21 @@ public class CalcSM {
                 currentState = OFF;
                 break;
         }
-        
+
         determineState();
     }
-    
+
     /**
-     * This method determines one state the calculator is in. Depending on the user actions, 
-     * operand1 value and operand 2 value, and other state, state is continually updated. Through the state 
-     * machine process. This method is used after each input to determine what the next set
-     * of operations should be...
+     * This method determines one state the calculator is in. Depending on the
+     * user actions, operand1 value and operand 2 value, and other state, state
+     * is continually updated. Through the state machine process. This method is
+     * used after each buttonAction to determine what the next set of operations
+     * should be...
      */
-    public static void determineState()
-    {
+    public static void determineState() {
         debugPrint("#### Enter - DETERMINE STATE = " + currentState.toString() + " #############");
-        
-        switch(currentState)
-        {
+
+        switch (currentState) {
             case ON:
                 on();
                 break;
@@ -165,40 +168,30 @@ public class CalcSM {
                 OperandTwoState.frac2();
                 break;
         }
-        
-        
+
         debugPrint("#### Exit - DETERMINE STATE ##########");
     }
-    
-    public static void on()
-    {
+
+    public static void on() {
         debugPrint("Enter - ON STATE");
-        
+
         clear();
         currentState = BEGIN;
         ReadyState.ready();
-        
-        
-        
-        debugPrint("Exit - ON STATE");        
+
+        debugPrint("Exit - ON STATE");
     }
-    
-    public static void off()
-    {
+
+    public static void off() {
         debugPrint("Enter - OFF STATE");
-        
-        
-        
-        debugPrint("Exit - OFF STATE");        
+
+        debugPrint("Exit - OFF STATE");
     }
-    
+
     // ######################################
-  
-    public static String operationOutput()
-    {
-        
-        switch (currentState)
-        {
+    public static String operationOutput() {
+
+        switch (currentState) {
             case ON:
                 return "...";
             case OFF:
@@ -211,30 +204,26 @@ public class CalcSM {
             case ZERO1:
             case INT1:
             case FRAC1:
-                //return OP1.getOperandString();
+            //return OP1.getOperandString();
             case OPENTERED:
-                //return OpEnteredState.opEnteredStringVal();
+            //return OpEnteredState.opEnteredStringVal();
             case OPERAND2:
             case ZERO2:
             case INT2:
             case FRAC2:
                 //return OP2.getOperandString();
-                return Error(OP1.getOperandString() + " " +OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
-                
-            case RESULT:
-                return Error(OP1.getOperandString() + isPercentTop() + " " +OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
+                return Error(OP1.getOperandString() + " " + OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
 
-            
+            case RESULT:
+                return Error(OP1.getOperandString() + isPercentTop() + " " + OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
+
         }
-        
-        
+
         return "###";
     }
-    
-    public static String resultOutput()
-    {
-        switch (currentState)
-        {
+
+    public static String resultOutput() {
+        switch (currentState) {
             case ON:
                 return "...";
             case OFF:
@@ -255,85 +244,69 @@ public class CalcSM {
                 break;
             case RESULT:
                 return Error(CalcSM.total.stripTrailingZeros().toPlainString() + isPercent());
-            
+
         }
         return "";
     }
-    
-    public static String hasMemory()
-    {
-        if(MemoryState.hasMemory)
+
+    public static String hasMemory() {
+        if (MemoryState.hasMemory) {
             return "MEMORY";
-        else
+        } else {
             return "";
+        }
     }
-    
-    public static String Error(String input)
-    {
-        if(error)
+
+    public static String Error(String input) {
+        if (error) {
             return "ERROR";
-        else if (input.length() > 20)
+        } else if (input.length() > 20) {
             return "ERROR";
-        else
+        } else {
             return input;
-    }
-    
-    
-    public static String isPercent()
-    {
-        if(isPercentage)
-        {
-            return "%";
         }
-        else 
-        {
+    }
+
+    public static String isPercent() {
+        if (isPercentage) {
+            return "%";
+        } else {
             return "";
         }
     }
-    
-    public static String isPercentTop()
-    {
-        if (isPercentageTop)
-        {
+
+    public static String isPercentTop() {
+        if (isPercentageTop) {
             return "%";
-        }
-        else
-        {
+        } else {
             return "";
         }
     }
-    
-    
+
     // ***************************************
-    public static void debugPrint(String str)
-    {
-        if(printOutBool)
+    public static void debugPrint(String str) {
+        if (printOutBool) {
             System.out.println(str);
-    }
-    
-    public static String numWithCommas(String str)
-    {
-        if(isPercentage || isPercentageTop) {
-            return str;
         }
-        else
-        {
+    }
+
+    public static String numWithCommas(String str) {
+        if (isPercentage || isPercentageTop) {
+            return str;
+        } else {
             String temp = "";
             int j = 0;
-            for (int i = str.length() - 1; i > -1; --i)
-            {
-                if (j < 2)
-                {
+            for (int i = str.length() - 1; i > -1; --i) {
+                if (j < 2) {
                     ++j;
                     temp = str.charAt(i) + temp;
-                }
-                else
-                {
+                } else {
                     j = 0;
-                    if (i != 0)
-                        temp = "," + str.charAt(i) + temp; 
-                    else
+                    if (i != 0) {
+                        temp = "," + str.charAt(i) + temp;
+                    } else {
                         temp = str.charAt(i) + temp;
+                    }
                 }
             }
             return temp;
@@ -379,9 +352,5 @@ public class CalcSM {
     public static void setMathState(EnumMathState mathState) {
         CalcSM.mathState = mathState;
     }
-    
-    
 
-
-    
 }

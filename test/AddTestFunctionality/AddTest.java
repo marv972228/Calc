@@ -47,12 +47,12 @@ public class AddTest {
     @Test
     public void addTest() {
         CalcSM.initialize();
-        CalcSM.input("5");
-        CalcSM.input("5");
-        CalcSM.input("+");
-        CalcSM.input("5");
-        CalcSM.input("5");
-        CalcSM.input("=");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("+");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("=");
         BigDecimal val = CalcSM.getTotal();
         BigDecimal expected = new BigDecimal("110");
         assertEquals(expected.intValue(), val.intValue());
@@ -69,10 +69,10 @@ public class AddTest {
     public void addIncorrectValues() {
         System.out.println("This test is to make sure 1+1 != 3");
         CalcSM.initialize();
-        CalcSM.input("1");
-        CalcSM.input("+");
-        CalcSM.input("1");
-        CalcSM.input("=");
+        CalcSM.buttonAction("1");
+        CalcSM.buttonAction("+");
+        CalcSM.buttonAction("1");
+        CalcSM.buttonAction("=");
         BigDecimal val = CalcSM.getTotal();
         BigDecimal expected = new BigDecimal("3");
         System.out.println(CalcSM.OP1.getBigDecimal().intValue() + " + " + CalcSM.OP2.getBigDecimal().intValue() + " = " + CalcSM.getTotal());

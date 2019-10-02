@@ -11,18 +11,16 @@ import static enums.EnumOperationState.*;
  * @author marvi
  */
 public class ErrorState {
-    
+
     /**
      * This method enters the error state, not much happens here but is handled
      * outside this state
      */
-    public static void error()
-    {
+    public static void error() {
         CalcSM.debugPrint("Enter ERROR state");
-        CalcSM.setUserInput("error");
-        
-        switch(CalcSM.getUserInput())
-        {
+        CalcSM.setButtonActionValue("error");
+
+        switch (CalcSM.getButtonActionValue()) {
             case "error":
                 break;
             default:
@@ -31,8 +29,8 @@ public class ErrorState {
                 ReadyState.begin();
                 break;
         }
-        
+
         CalcSM.debugPrint("Exit Error state");
     }
-    
+
 }

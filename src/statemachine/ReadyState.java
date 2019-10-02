@@ -12,37 +12,33 @@ import java.math.BigDecimal;
  *
  * @author marvi
  */
-public class ReadyState 
-{
-    public static void ready()
-    {
+public class ReadyState {
+
+    public static void ready() {
         CalcSM.debugPrint("Enter - READY STATE");
-        
-        switch(CalcSM.getCurrentState())
-        {
+
+        switch (CalcSM.getCurrentState()) {
             case BEGIN:
                 begin();
                 break;
             case RESULT:
                 break;
-        }        
-        
-        CalcSM.debugPrint("Exit - READY STATE");             
+        }
+
+        CalcSM.debugPrint("Exit - READY STATE");
     }
-    
-    public static void begin()
-    {
+
+    public static void begin() {
         CalcSM.debugPrint("Enter - BEGIN STATE");
-        
-        switch(CalcSM.getUserInput())
-        {
+
+        switch (CalcSM.getButtonActionValue()) {
             case "MRC":
                 MemoryState.memory();
                 break;
             case "negateInput":
                 CalcSM.debugPrint("Go to NEGATED1");
                 CalcSM.setCurrentState(NEGATED1);
-               
+
                 break;
             case "0":
                 CalcSM.debugPrint("Go to ZERO1");
@@ -62,24 +58,20 @@ public class ReadyState
                 CalcSM.setCurrentState(INT1);
                 OperandOneState.int1();
                 break;
-                
+
             case "decimalPointInput":
                 CalcSM.debugPrint("Go to FRAC1");
                 break;
         }
 
-        
-        
-        CalcSM.debugPrint("Exit - BEGIN STATE");        
+        CalcSM.debugPrint("Exit - BEGIN STATE");
     }
-    
-    public static void result()
-    { 
-        CalcSM.debugPrint("Enter - RESULT STATE");  
+
+    public static void result() {
+        CalcSM.debugPrint("Enter - RESULT STATE");
         CalcSM.isPercentage = false;
-        
-        switch(CalcSM.getUserInput())
-        {
+
+        switch (CalcSM.getButtonActionValue()) {
             case "+":
             case "-":
             case "/":
@@ -111,9 +103,9 @@ public class ReadyState
                 CalcSM.clear();
                 CalcSM.setCurrentState(BEGIN);
                 ready();
-                
+
         }
-        
-        CalcSM.debugPrint("Exit - RESULT STATE");          
-    } 
+
+        CalcSM.debugPrint("Exit - RESULT STATE");
+    }
 }

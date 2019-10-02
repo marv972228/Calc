@@ -21,11 +21,11 @@ public class DivideTest {
     @Test
     public void divideSimple() {
         CalcSM.initialize();
-        CalcSM.input("5");
-        CalcSM.input("5");
-        CalcSM.input("/");
-        CalcSM.input("5");
-        CalcSM.input("=");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("/");
+        CalcSM.buttonAction("5");
+        CalcSM.buttonAction("=");
         BigDecimal val = CalcSM.getTotal();
         BigDecimal expected = new BigDecimal("11");
         assertEquals(expected.intValue(), val.intValue());

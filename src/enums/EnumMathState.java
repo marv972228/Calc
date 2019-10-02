@@ -9,5 +9,5 @@ package enums;
  * @author marvi
  */
 public enum EnumMathState {
-    NONE, ADD, SUBTRACT, MULTIPLY, DIVIDE, SQUARE, EXPONENT, PERCENT    
+    NONE, ADD, SUBTRACT, MULTIPLY, DIVIDE, SQUARE, EXPONENT, PERCENT
 }

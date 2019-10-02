@@ -25,11 +25,11 @@ public class SubtractTest {
     @Test
     public void subtractSimpleTest() {
         CalcSM.initialize();
-        CalcSM.input("3");
-        CalcSM.input("3");
-        CalcSM.input("-");
-        CalcSM.input("3");
-        CalcSM.input("=");
+        CalcSM.buttonAction("3");
+        CalcSM.buttonAction("3");
+        CalcSM.buttonAction("-");
+        CalcSM.buttonAction("3");
+        CalcSM.buttonAction("=");
         BigDecimal val = CalcSM.getTotal();
         BigDecimal expected = new BigDecimal("30");
         assertEquals(expected.intValue(), val.intValue());

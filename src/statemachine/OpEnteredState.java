@@ -11,13 +11,11 @@ import static enums.EnumOperationState.*;
  *
  * @author marvi
  */
-public class OpEnteredState 
-{
-    public static void opEntered()
-    {
+public class OpEnteredState {
+
+    public static void opEntered() {
         CalcSM.debugPrint("Enter OP ENTERED STATE");
-        switch(CalcSM.getUserInput())
-        {
+        switch (CalcSM.getButtonActionValue()) {
             case "MRC":
                 MemoryState.memory();
                 break;
@@ -68,26 +66,24 @@ public class OpEnteredState
                 break;
             default:
                 break;
-                
-                    
+
         }
-        
+
         CalcSM.debugPrint("Exit OP ENTERED STATE - mathstate = " + CalcSM.getMathState().toString());
     }
-    
-    public static String opEnteredStringVal() 
-    {
-        switch (CalcSM.getMathState())
-        {
+
+    public static String opEnteredStringVal() {
+        switch (CalcSM.getMathState()) {
             case ADD:
                 return "+";
             case SUBTRACT:
                 return "-";
             case MULTIPLY:
-                if(CalcSM.isPercentageTop)
+                if (CalcSM.isPercentageTop) {
                     return "of";
-                else
+                } else {
                     return "*";
+                }
             case DIVIDE:
                 return "/";
             case EXPONENT:

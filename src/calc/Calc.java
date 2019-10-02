@@ -20,9 +20,9 @@ public class Calc extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLCalcUI.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.initStyle(StageStyle.UTILITY);
         stage.setTitle("Java Calculator");
         stage.setScene(scene);
@@ -35,5 +35,5 @@ public class Calc extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

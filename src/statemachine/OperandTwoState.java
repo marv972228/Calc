@@ -11,13 +11,11 @@ import java.math.BigDecimal;
  *
  * @author marvi
  */
-public class OperandTwoState 
-{
-    public static void operand2()
-    {
+public class OperandTwoState {
+
+    public static void operand2() {
         CalcSM.debugPrint("Enter - OPERAND2 STATE");
-        switch(CalcSM.getUserInput())
-        {
+        switch (CalcSM.getButtonActionValue()) {
             case "MRC":
                 MemoryState.memory();
                 break;
@@ -39,7 +37,7 @@ public class OperandTwoState
                 CalcSM.setTotal(new BigDecimal("0"));
                 CalcSM.setCurrentState(OPENTERED);
                 OpEnteredState.opEntered();
-                
+
                 break;
             case "%":
             case "=":
@@ -49,16 +47,14 @@ public class OperandTwoState
 
                 break;
         }
-        
-        CalcSM.debugPrint("Exit - OPERAND2 STATE");   
+
+        CalcSM.debugPrint("Exit - OPERAND2 STATE");
     }
-    
-    public static void zero2()
-    {
+
+    public static void zero2() {
         CalcSM.debugPrint("Enter - ZERO2 STATE");
-        
-        switch(CalcSM.getUserInput())
-        {
+
+        switch (CalcSM.getButtonActionValue()) {
             case "(-)":
                 CalcSM.OP2.setNegation();
                 break;
@@ -95,16 +91,13 @@ public class OperandTwoState
                 operand2();
                 break;
         }
-        
-        
-        CalcSM.debugPrint("Exit - ZERO2 STATE");         
+
+        CalcSM.debugPrint("Exit - ZERO2 STATE");
     }
-    
-    public static void int2()
-    {
+
+    public static void int2() {
         CalcSM.debugPrint("Enter - INT2 STATE");
-        switch(CalcSM.getUserInput())
-        {
+        switch (CalcSM.getButtonActionValue()) {
             case "(-)":
                 CalcSM.OP2.setNegation();
                 break;
@@ -119,7 +112,7 @@ public class OperandTwoState
             case "8":
             case "9":
                 CalcSM.debugPrint("+++ Append INTEGER2 +++");
-                CalcSM.OP2.appendIntString(CalcSM.getUserInput());
+                CalcSM.OP2.appendIntString(CalcSM.getButtonActionValue());
                 break;
             case ".":
                 CalcSM.OP2.setZeroString(false);
@@ -136,17 +129,15 @@ public class OperandTwoState
                 CalcSM.setCurrentState(OPERAND2);
                 operand2();
                 break;
-        }        
-        
+        }
+
         CalcSM.debugPrint("OPERAND2 value string = " + CalcSM.OP2.getOperandString());
-        CalcSM.debugPrint("Exit - INT2 STATE");         
+        CalcSM.debugPrint("Exit - INT2 STATE");
     }
-    
-    public static void frac2()
-    {
+
+    public static void frac2() {
         CalcSM.debugPrint("Enter - FRAC2 STATE");
-        switch(CalcSM.getUserInput())
-        {
+        switch (CalcSM.getButtonActionValue()) {
             case "(-)":
                 CalcSM.OP2.setNegation();
                 break;
@@ -161,7 +152,7 @@ public class OperandTwoState
             case "8":
             case "9":
                 CalcSM.debugPrint("+++ Append FRAC2 +++");
-                CalcSM.OP2.appendFracString(CalcSM.getUserInput());
+                CalcSM.OP2.appendFracString(CalcSM.getButtonActionValue());
                 break;
             case ".":
                 break;
@@ -174,8 +165,8 @@ public class OperandTwoState
                 CalcSM.setCurrentState(OPERAND2);
                 operand2();
                 break;
-        }              
-        CalcSM.debugPrint("OPERAND2 value string = " + CalcSM.OP2.getOperandString());       
-        CalcSM.debugPrint("Exit - FRAC2 STATE");         
-    }    
+        }
+        CalcSM.debugPrint("OPERAND2 value string = " + CalcSM.OP2.getOperandString());
+        CalcSM.debugPrint("Exit - FRAC2 STATE");
+    }
 }
