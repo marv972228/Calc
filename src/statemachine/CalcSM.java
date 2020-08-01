@@ -95,6 +95,16 @@ public class CalcSM {
     /**
      * This is the method used via the CalcController to set the value of the
      * last user action on the calculator
+     * 
+     * This basically is listening for whatever value is triggered by 
+     * touching some button on the calculator. Typically each button has
+     * a string of length one, but a few buttons have more chars to 
+     * better describe it's actions.
+     * 
+     * This method will see first check if a user has turned on or off 
+     * the calculator. As the sequence of buttons are pushed, state changes 
+     * and determines where in the state machine action is happening.
+     * 
      *
      * @param str
      */
@@ -212,10 +222,10 @@ public class CalcSM {
             case INT2:
             case FRAC2:
                 //return OP2.getOperandString();
-                return Error(OP1.getOperandString() + " " + OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
+                return errorOutputCheck(OP1.getOperandString() + " " + OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
 
             case RESULT:
-                return Error(OP1.getOperandString() + isPercentTop() + " " + OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
+                return errorOutputCheck(OP1.getOperandString() + isPercentTop() + " " + OpEnteredState.opEnteredStringVal() + " " + OP2.getOperandString());
 
         }
 
@@ -230,20 +240,20 @@ public class CalcSM {
                 return "...";
             case BEGIN:
                 return "...";
+                
+            // for these cases, nothing will show in the result window until RESULT state is reached
             case OPERAND1:
             case ZERO1:
             case INT1:
             case FRAC1:
-
             case OPENTERED:
-
             case OPERAND2:
             case ZERO2:
             case INT2:
             case FRAC2:
                 break;
             case RESULT:
-                return Error(CalcSM.total.stripTrailingZeros().toPlainString() + isPercent());
+                return errorOutputCheck(CalcSM.total.stripTrailingZeros().toPlainString() + isPercent());
 
         }
         return "";
@@ -257,7 +267,16 @@ public class CalcSM {
         }
     }
 
-    public static String Error(String input) {
+    /**
+     * When the result is finally calculated, check if the length of the string
+     * goes beyond the window, if so just error out.
+     * 
+     * Future is to add some scientific notation to better display giant numbers
+     * 
+     * @param input
+     * @return 
+     */
+    public static String errorOutputCheck(String input) {
         if (error) {
             return "ERROR";
         } else if (input.length() > 20) {
@@ -290,6 +309,7 @@ public class CalcSM {
         }
     }
 
+    @Deprecated
     public static String numWithCommas(String str) {
         if (isPercentage || isPercentageTop) {
             return str;
